@@ -4,7 +4,7 @@
 class postgresql::service {
   $ensure = $postgresql::start ? {true => running, default => stopped}
 
-  service { 'postgres':
+  service { 'postgresql':
     ensure => $ensure,
     enable => $postgresql::enable,
   }

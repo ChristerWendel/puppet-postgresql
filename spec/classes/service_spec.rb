@@ -4,7 +4,7 @@ describe 'postgresql', :type => :class do
   let(:title) { 'postgresql::service' }
 
   context 'with default parameters' do
-    it { should contain_service('postgres')
+    it { should contain_service('postgresql')
         .with_ensure('running')
         .with_enable('true')
     }
@@ -13,7 +13,7 @@ describe 'postgresql', :type => :class do
   context 'enable => false' do
     let(:params) { {:enable => 'false'} }
 
-    it { should contain_service('postgres')
+    it { should contain_service('postgresql')
         .with_ensure('running')
         .with_enable('false')
     }
@@ -22,7 +22,7 @@ describe 'postgresql', :type => :class do
   context 'start => false' do
     let(:params) { {:start => 'false'} }
 
-    it { should contain_service('postgres')
+    it { should contain_service('postgresql')
         .with_ensure('stopped')
         .with_enable('true')
     }
